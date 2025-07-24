@@ -12,7 +12,6 @@ Cylinder::Cylinder(std::shared_ptr<GPUProgram> shader_program, int segments, flo
 
     float halfHeight = height / 2.0f;
 
-    // Körívek generálása
     for (int i = 0; i < segments; ++i) {
         float angle0 = (float)i / segments * glm::two_pi<float>();
         float angle1 = (float)(i + 1) / segments * glm::two_pi<float>();
@@ -22,7 +21,6 @@ Cylinder::Cylinder(std::shared_ptr<GPUProgram> shader_program, int segments, flo
         glm::vec3 p2(radius * cos(angle0), +halfHeight, radius * sin(angle0));
         glm::vec3 p3(radius * cos(angle1), +halfHeight, radius * sin(angle1));
 
-        // Oldalfelület két háromszöggel
         verts.push_back(p0);
         verts.push_back(p2);
         verts.push_back(p1);
@@ -31,12 +29,10 @@ Cylinder::Cylinder(std::shared_ptr<GPUProgram> shader_program, int segments, flo
         verts.push_back(p2);
         verts.push_back(p3);
 
-        // Alsó zárólap
         verts.push_back(glm::vec3(0.0f, -halfHeight, 0.0f));
         verts.push_back(p1);
         verts.push_back(p0);
 
-        // Felsõ zárólap
         verts.push_back(glm::vec3(0.0f, +halfHeight, 0.0f));
         verts.push_back(p2);
         verts.push_back(p3);
@@ -53,7 +49,7 @@ void Cylinder::calculateNormals() {
     normals.reserve(vertices->Vtx().size());
 
     for (const auto& v : vertices->Vtx()) {
-        glm::vec3 n = glm::normalize(glm::vec3(v.x, 0.0f, v.z));  // egyszerûsített normál az oldalfelülethez
+        glm::vec3 n = glm::normalize(glm::vec3(v.x, 0.0f, v.z)); 
         normals.push_back(n);
     }
 }
@@ -77,7 +73,7 @@ const char* Cylinder::getName() const {
 void Cylinder::renderUI() {
     ImGui::PushID(id);
     Object::renderUI();
-    ImGui::Text("Cylinder-specific properties");
+    //ImGui::Text("Cylinder-specific properties");
     if (ImGui::ColorEdit3("Color", &color.x)) {
         updateGPU();
     }

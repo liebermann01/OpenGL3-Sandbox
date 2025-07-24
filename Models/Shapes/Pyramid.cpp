@@ -7,21 +7,19 @@ Pyramid::Pyramid(std::shared_ptr<GPUProgram> shader_program)
     layer = 1;
     active = true;
 
-    // Alap négy pontja (négyzet)
     glm::vec3 a(-0.5f, 0.0f, -0.5f);
     glm::vec3 b(0.5f, 0.0f, -0.5f);
     glm::vec3 c(0.5f, 0.0f, 0.5f);
     glm::vec3 d(-0.5f, 0.0f, 0.5f);
 
-    // Csúcs
+
     glm::vec3 top(0.0f, 1.0f, 0.0f);
 
     std::vector<glm::vec3> tris = {
-        // Alap (2 háromszög)
+
         a, b, c,
         c, d, a,
 
-        // Oldallapok (4 háromszög)
         a, b, top,
         b, c, top,
         c, d, top,
@@ -79,7 +77,7 @@ const char* Pyramid::getName() const {
 void Pyramid::renderUI() {
     ImGui::PushID(id);
     Object::renderUI();
-    ImGui::Text("Pyramid-specific properties");
+    //ImGui::Text("Pyramid-specific properties");
     if (ImGui::ColorEdit3("Color", &color.x)) {
         updateGPU();
     }

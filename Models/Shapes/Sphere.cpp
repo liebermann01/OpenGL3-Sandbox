@@ -95,7 +95,7 @@ const glm::vec3 Sphere::getColor() const {
 void Sphere::renderUI() {
     ImGui::PushID(id);
     Object::renderUI();
-    ImGui::Text("Sphere-specific properties");
+    //ImGui::Text("Sphere-specific properties");
     if (ImGui::ColorEdit3("Color", &color.x)) {
         updateGPU();
     }

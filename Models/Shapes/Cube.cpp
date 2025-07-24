@@ -77,7 +77,7 @@ const glm::vec3 Cube::getColor() const {
 void Cube::renderUI()  {
     ImGui::PushID(id);
     Object::renderUI();
-    ImGui::Text("Cube-specific properties");
+    //ImGui::Text("Cube-specific properties");
     if (ImGui::ColorEdit3("Color", &color.x)) {
         updateGPU();
     }
