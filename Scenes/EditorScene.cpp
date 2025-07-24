@@ -49,7 +49,6 @@ void EditorScene::update(float dt) {
 
     if (ImGui::Button("Add", ImVec2(60, 0))) {
         auto program = std::make_shared<GPUProgram>(Grid::gridVertexShaderSrc, Grid::gridFragmentShaderSrc);
-        //auto program2 =  std::make_shared<GPUProgram>(Object::vertexShaderSrc, Object::fragmentShaderSrc);
         if (current_item != -1) {
             std::string selected_type = items[current_item];
 

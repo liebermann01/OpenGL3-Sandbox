@@ -2,7 +2,7 @@
 
 #include "glm/glm.hpp"
 #include <string>
-#include <glad/glad.h>
+#include "glad/glad.h"
 
 class GPUProgram {
 private:
