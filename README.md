@@ -5,7 +5,7 @@ This is a low-level rendering engine built upon [GLFW3](https://www.glfw.org/), 
 In its current state, the program opens an editor interface where various 3D shapes can be assembled.
 
 ## Showcase
-<img src="images/kadarkcoka_compressed.gif" width="400"/>
+<img src="images/kadarkocka_compressed.gif" width="400"/>
 <br/>
 <img src="images/snowman2.png" width="400"/>
 
