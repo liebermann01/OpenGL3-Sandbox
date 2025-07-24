@@ -27,6 +27,7 @@ Within the Transform section, you can scale the element, set its position, and a
 Additionally, you can define the color of each element either by specifying RGB values or by selecting from a color palette.
 
 ### Todo
+1. Refactoring
 1. Implementation of lights (ambient, directional...)
 2. Texture mapping
 3. Integration of ray tracing capabilities
