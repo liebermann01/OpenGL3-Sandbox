@@ -6,7 +6,6 @@ In its current state, the program opens an editor interface where various 3D sha
 
 ## Showcase
 <img src="images/kadarkocka_compressed.gif" width="400"/>
-<br/>
 <img src="images/snowman2.png" width="400"/>
 
 ## Controls
